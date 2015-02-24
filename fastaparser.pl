@@ -4,18 +4,18 @@ use strict;
 use warnings;
 
 my $filename = "fasta.txt";
+my %sequence = ();
+
 open FASTA, $filename or die "$filename $!"; 
 
 while (<FASTA>)
 {
-    if($_ =~ /^>(\w+)\s(\w+)/)
+    if($_ =~ /^>/)
     {
-	print "$_";
-    }
-
-#    print "$_"; 
+	$sequence{"$_"} = "";
+    } 
 }
 
 close FASTA or die;
 
-1;
+
