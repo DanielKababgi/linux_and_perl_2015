@@ -3,17 +3,6 @@
 use strict;
 use warnings;
 
-open FASTA, "fasta.txt" or die; 
+my $filename = "fasta.txt";
+open FASTA, $filename or die "$filename $!"; 
 
-my $line;
-my $input;
-
-while ($line=<FASTA>)
-{
-    $input = grep /^>(\w+)\s(\w+)/, $line;
-    my ($id,$specie) = ($1, $2);
-    print "$id";
-    print "$specie";
-}
-
-close FASTA or die; 
