@@ -18,7 +18,6 @@ while (<FASTA>)
     }
     else
     {
-	$sequence{$key} = $_;
 	$sequence{$key} = $sequence{$key}.$_; 
     }
 }
@@ -26,3 +25,4 @@ while (<FASTA>)
 close FASTA or die;
 
 
+1;
