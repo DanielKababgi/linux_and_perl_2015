@@ -10,6 +10,7 @@ my $ralph = new_ok ("fasta_seq");
 
 can_ok ("fasta_seq", "id");
 is ($ralph->id, "ralph", "get_id");
-
-
+$ralph -> id("willi");
+is($ralph-> id, "willi", "set_id");
+ 
 done_testing();
