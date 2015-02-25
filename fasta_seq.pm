@@ -4,16 +4,18 @@ use strict;
 use warnings;
 
 sub new
-{
-    my $self = {};
-    bless $self,"fasta_seq";
+{  
+    my $class = shift;
+    my $self = {id=>$_[0]};
+    bless $self, $class;
     return $self;
 }
 
 sub id
 {
-    my $self = {};
-    return "ralph";
+    my $self = shift;
+    $self->{id} = shift if (defined $_[0]);
+    return $self->{id};
 }
 
 1;
